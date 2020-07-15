@@ -1,0 +1,20 @@
+{% extends "Mynotes/base.html" %}
+{% block content %}
+    {% for post in posts %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <h6><b><a class="mr-2" href="#">{{ post.organization }}</a></b></h6>
+            <div class="article-metadata">  
+              <a class="mr-2" href="#">{{ post.agenda }}</a>
+            </div>
+              <small class="text-muted">{{ post.date_posted }}</small>
+            </div>
+            <h6><a class="article-title" href="#">{{ post.title }}</a></h6>
+            <a class="mr-2" href="#">{{ post.author }}</a>
+            <a class="mr-2" href="#">{{ post.attendance }}</a>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
