@@ -10,10 +10,14 @@
             </div>
               <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
             </div>
-            <h6><a class="article-title" href="#">{{ post.title }}</a></h6>
-            <a class="mr-2" href="#">{{ post.author }}</a>
-            <a class="mr-2" href="#">{{ post.attendance }}</a>
-            <p class="article-content">{{ post.content }}</p>
+            <div class="article-metadata"> 
+                <h7>By<a class="mr-2" href="#"> {{ post.author }}</a></h7><br>
+                <h7>Attended by:<a class="mr-2" href="#">{{ post.attendance }}</a></h7>
+            </div>
+            <div class="article-metadata">
+              <p class="article-content">{{ post.content }}</p>
+            </div>
+            
           </div>
         </article>
     {% endfor %}
