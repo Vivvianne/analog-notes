@@ -29,7 +29,14 @@
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{% url 'Mynotes-home' %}">Home</a>
-              <a class="nav-item nav-link" href="{% url 'Mynotes-about' %}">About</a>
+              <!-- <a class="nav-item nav-link" href="{% url 'Mynotes-about' %}">About</a> -->
+            </div>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <form class="form-inline my-2 my-lg-0" action="{% url 'search_results' %}">
+                <input class="form-control mr-sm-2" type="search" placeholder="search" aria-label="Search">
+                <button class="btn  my-2 my-sm-0" type="submit">Search</button>
+              </form>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">

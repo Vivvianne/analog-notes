@@ -12,10 +12,17 @@ class Post(models.Model):
     content =  models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     
+    @classmethod
+    def search_by_agenda(cls,search_term):
+        Post = cls.objects.filter(agenda__icontains=search_term)
+        return Post
+    
     def __str__(self):
         return self.organization
     
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk})
+    
+    
 
 
