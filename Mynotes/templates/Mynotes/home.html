@@ -11,8 +11,9 @@
               <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
             </div>
             <div class="article-metadata"> 
-                <h7>By<a class="mr-2" href="#"> {{ post.author }}</a></h7><br>
-                <h7>Attended by:<a class="mr-2" href="#">{{ post.attendance }}</a></h7>
+              <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+              <h7>By<a class="mr-2" href="#"> {{ post.author }}</a></h7><br>
+              <h7>Attended by:<a class="mr-2" href="#">{{ post.attendance }}</a></h7>
             </div>
             <div class="article-metadata">
               <p class="article-content">{{ post.content }}</p>
