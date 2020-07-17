@@ -5,13 +5,14 @@
           <div class="media-body">
             <div class="article-metadata">
               <h6><b><a class="mr-2" href="#">{{ post.organization }}</a></b></h6>
+
             <div class="article-metadata">  
-              <a class="mr-2" href="#">{{ post.agenda }}</a>
+              <h6>Agenda:<a class="mr-2" href="{% url 'post-detail' post.id %}">{{ post.agenda }}</a></h6>
             </div>
               <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
             </div>
             <div class="article-metadata"> 
-              <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+              <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
               <h7>By<a class="mr-2" href="#"> {{ post.author }}</a></h7><br>
               <h7>Attended by:<a class="mr-2" href="#">{{ post.attendance }}</a></h7>
             </div>
