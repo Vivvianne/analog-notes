@@ -14,8 +14,8 @@ class Post(models.Model):
     
     @classmethod
     def search_by_agenda(cls,search_term):
-        Post = cls.objects.filter(agenda__icontains=search_term)
-        return Post
+        notes = cls.objects.filter(agenda__icontains=search_term)
+        return notes
     
     def __str__(self):
         return self.organization

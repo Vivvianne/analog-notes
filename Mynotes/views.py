@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import render
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.views.generic import (
@@ -10,6 +11,8 @@ from django.views.generic import (
     DeleteView
 )
 from .models import Post
+from .models import *
+from django.db.models import Q
 
 
 def home(request):
@@ -83,12 +86,14 @@ def search_results(request):
     
     if 'post' in request.GET and request.GET["post"]:
         search_term = request.GET.get("post")
-        searched_posts = Post.search_by_agenda(search_term)| Post.search_by_attendance(search_term)| Post.search_by_content(search_term)
+        searched_posts = Post.search_by_agenda(search_term)
         message = f"{search_term}"
 
-        return render(request, 'Mynotes/search.html',{"message":message,"posts": searched_posts})
+        return render(request, 'Mynotes/search-results.html',{"message":message,"posts": searched_posts})
 
     else:
         message = "You haven't searched for any term"
-        return render(request, 'Mynotes/search.html',{"message":message})
-
+        return render(request, 'Mynotes/search_results.html',{"message":message})
+        
+    
+   

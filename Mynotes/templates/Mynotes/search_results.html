@@ -3,7 +3,7 @@
 <div class="container">
 
   <div class="row">
-    {% if articles%}
+    {% if posts%}
       <h2>Found {{ posts|length }} of searched term {{message}}</h2>
     {% else %}
       <h2> Found 0 notes for the search term {{message}}</h2>
@@ -14,9 +14,9 @@
   <div class="row">
 
   {% if posts %}
-    {% for posts in posts %}
+    {% for post in posts %}
       <div class="col-sm-6 col-md-3">
-          <h1>{{post.title}}</h1>
+          <h1>{{post.agenda}}</h1>
       </div>
     {% endfor %}
   {% endif %}
